@@ -1,11 +1,17 @@
-import { Accordion, AccordionSummary, AccordionDetails, Box, Button, Paper, Stack, Typography } from '@mui/material'
-import React from 'react'
+import { Accordion, AccordionSummary, AccordionDetails, Box, Button, Stack, Typography } from '@mui/material'
 import { CodeSnippet } from './page'
 import { ExpandMore } from '@mui/icons-material'
 
 const Details = () => {
     return (
-        <Accordion sx={{ backgroundColor: '#1f1f1f', borderRadius: 3,}} >
+        <Accordion sx={{
+            backgroundColor: '#1f1f1f',
+            borderRadius: 1.5,
+            border: 'none',
+            '&:before': {
+                display: 'none',
+            },
+        }} >
             <AccordionSummary
                 expandIcon={<ExpandMore />}
                 aria-controls="panel-content"
