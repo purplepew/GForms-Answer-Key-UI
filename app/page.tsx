@@ -3,7 +3,7 @@ import HeroVideo from './components/HeroVideo'
 
 const page = async () => {
 
- 
+
   return (
     <Box
       component="main"
@@ -11,16 +11,17 @@ const page = async () => {
         display: 'flex',
         flexDirection: { xs: 'column', xl: 'row' },
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: { xs: 'flex-start', xl: 'center' },
         gap: { xs: 4, md: 8 },
         minHeight: '100vh',
         padding: 4,
         paddingTop: { xs: 8, xl: 4 },
-        textAlign: 'left'
+        textAlign: 'left',
+        
       }}
     >
       {/* Left Content Side */}
-      <Box
+      < Box
         sx={{ maxWidth: "650px", width: '100%', textAlign: 'center' }}
       >
         <Typography
@@ -37,24 +38,24 @@ const page = async () => {
           Generate an answer key to your Google Forms Quiz
         </Typography>
 
-        <Button variant='contained' 
-        sx={{ 
-          '@keyframes abruptFadeIn': {
-            '0%': { opacity: .7},
-            '88%': { opacity: .7},
-            '100%': {opacity: 1}
-          },
-          animation: 'abruptFadeIn 8s'
-        }}
-        LinkComponent={'a'}
-        href='/get-started'
+        <Button variant='contained'
+          sx={{
+            '@keyframes abruptFadeIn': {
+              '0%': { opacity: .7 },
+              '88%': { opacity: .7 },
+              '100%': { opacity: 1 }
+            },
+            animation: 'abruptFadeIn 8s'
+          }}
+          LinkComponent={'a'}
+          href='/get-started'
         >
           Get Started
         </Button>
-      </Box>
+      </Box >
 
       {/* Right Video Side */}
-      <Box
+      < Box
         sx={{
           width: '100%',
           maxWidth: 850,
@@ -67,8 +68,8 @@ const page = async () => {
         }}
       >
         <HeroVideo />
-      </Box>
-    </Box>
+      </Box >
+    </Box >
   )
 }
 

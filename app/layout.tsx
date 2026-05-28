@@ -14,7 +14,12 @@ export default async function RootLayout({
 }>) {
 
   return (
-    <html lang='en'>
+    <html lang='en'
+      style={{
+        scrollbarGutter: 'stable',
+        overflowY: 'auto',
+      }}
+    >
       <body>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <MUIThemeWrapper>
