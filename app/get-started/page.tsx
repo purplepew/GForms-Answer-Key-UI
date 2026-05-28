@@ -40,7 +40,6 @@ const page = () => {
         minHeight: '100vh'
       }}
     >
-
       <Box>
         <Stack spacing={2}>
           <Typography component="h2" variant="h5">Quick start</Typography>
