@@ -40,11 +40,6 @@ const page = async () => {
 
         <Button variant='contained'
           sx={{
-            '@keyframes abruptFadeIn': {
-              '0%': { opacity: .7 },
-              '88%': { opacity: .7 },
-              '100%': { opacity: 1 }
-            },
             animation: 'abruptFadeIn 8s'
           }}
           LinkComponent={'a'}
@@ -61,7 +56,6 @@ const page = async () => {
           maxWidth: 850,
           borderRadius: 2,
           overflow: 'hidden',
-          boxShadow: 3,
           height: 'auto',
           maxHeight: 450,
           position: 'relative'

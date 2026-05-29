@@ -5,7 +5,7 @@ import { useRef, useState } from 'react'
 const HeroVideo = () => {
     const url = '/vid.webm'
     const videoRef = useRef<HTMLVideoElement>(null)
-    const [isPlaying, setIsPlaying] = useState(false)
+    const [isPlaying, setIsPlaying] = useState(true)
 
     const togglePlay = async () => {
         if (!videoRef.current) return
@@ -19,48 +19,49 @@ const HeroVideo = () => {
         }
     }
 
+
     const content = (
-        <>
             <Fade in={true} timeout={2000} unmountOnExit>
-                <Box
-                    component="video"
-                    poster="/poster.png"
-                    playsInline
-                    autoPlay
-                    muted
-                    loop
-                    preload="metadata"
-                    style={{
-                        width: '100%',
-                        height: 'auto',
-                        display: 'block',
-                        objectFit: 'cover',
-                    }}
-                    aria-label="video showcase"
-                    ref={videoRef}
-                    onPlay={() => setIsPlaying(true)}
-                    onPause={() => setIsPlaying(false)}
-                >
-                    <source src={url} type="video/webm" />
-                    <p>Video not available.</p>
-                </Box>
+                <div>
+                    <Box
+                        component="video"
+                        poster="/poster.png"
+                        playsInline
+                        muted
+                        loop
+                        preload="metadata"
+                        autoPlay
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            display: 'block',
+                            objectFit: 'cover',
+                        }}
+                        aria-label="video showcase"
+                        ref={videoRef}
+                        onPlay={() => setIsPlaying(true)}
+                        onPause={() => setIsPlaying(false)}
+                    >
+                        <source src={url} type="video/webm" />
+                        <p>Video not available.</p>
+                    </Box>
+                    <IconButton
+                        onClick={() => togglePlay()}
+                        sx={{
+                            position: 'absolute',
+                            bottom: 0,
+                            left: '25px',
+                            zIndex: 3,
+                            color: '#5646e3',
+                            '&:hover': {
+                                color: '#210aeb'
+                            },
+                        }}
+                    >
+                        {isPlaying ? 'II' : 'Paused'}
+                    </IconButton>
+                </div>
             </Fade>
-            <IconButton
-                onClick={() => togglePlay()}
-                sx={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: '25px',
-                    zIndex: 3,
-                    color: '#5646e3',
-                    'hover': {
-                        color: 'red'
-                    }
-                }}
-            >
-                {isPlaying ? 'II' : 'Paused'}
-            </IconButton>
-        </>
     )
 
     return content
